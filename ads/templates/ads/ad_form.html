@@ -1,0 +1,51 @@
+{% load static %}
+
+<form method="post" enctype="multipart/form-data" id="ad-form"
+      action="{% if form.instance.pk %}{% url 'ads:ad_edit' form.instance.pk %}{% else %}{% url 'ads:ad_create' %}{% endif %}">
+
+    {% csrf_token %}
+    <img class="cross-img" id="cross-img" style="top: 5%;" src="{% static 'ads/img/cross.svg' %}">
+
+    <label for="{{ form.title.id_for_label }}" class="roboto-text black-text medium label-title">
+        Название объявления
+    </label>
+    <div class="form-section">
+        {{ form.title }}
+    </div>
+
+    <label for="{{ form.description.id_for_label }}" class="roboto-text black-text medium label-title">
+        Описание товара
+    </label>
+    <div class="form-section large">
+        {{ form.description }}
+    </div>
+
+    <label for="{{ form.image_url.id_for_label }}" class="roboto-text black-text medium label-title">
+        Изображение товара
+    </label>
+    <div class="form-section">
+        {{ form.image_url }}
+    </div>
+
+    <label for="{{ form.condition.id_for_label }}" class="roboto-text black-text medium label-title">
+        Состояние товара
+    </label>
+    <div class="form-section">
+        {{ form.condition }}
+    </div>
+
+    <label for="{{ form.category.id_for_label }}" class="roboto-text black-text medium label-title">
+        Категория товара
+    </label>
+    <div class="form-section slim">
+        {{ form.category }}
+    </div>
+
+    <div class="buttons-div">
+        <button type="submit" class="form-button orange-button">Сохранить</button>
+        {% if ad.user == request.user and ad.pk %}
+            <button type="button" class="cancel-ad-button red-button" data-ad-id="{{ ad.pk }}">Удалить</button>
+        {% endif %}
+    </div>
+
+</form>

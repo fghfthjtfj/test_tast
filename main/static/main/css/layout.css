@@ -1,0 +1,226 @@
+
+/*@font-face {
+    font-family: 'Makcex';
+    src: url('../fonts/Makcex.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+html, body {
+    overflow: hidden; /*                                  */
+    height: 100vh; /*                     100%               */
+    margin: 0;
+    position: absolute;
+}
+
+.fullscreen-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #d5d5d5;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.control-panel {
+    position: absolute;
+    bottom: 0vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    width: 100vw;
+    height: 70px;
+    /*border: 1px solid #fff;*/
+    box-sizing: border-box;
+    padding: 0 15px 0 15px;
+    background: linear-gradient(0deg, #535353 6.4%, #ffeded5c 100%);
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.nav-icons {
+    display: flex;
+    list-style: none;
+    width: 100%; /* кнопки займут всю доступную ширину */
+    padding: 0;
+    margin: 0;
+    justify-content: space-between; /* кнопки будут распределены равномерно, включая края */
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+}
+
+.single-button {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    padding: 14px;
+    border: 0px solid #FFFFFF;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.single-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.single-button.pressed {
+    filter: invert(55%) sepia(100%) saturate(600%) hue-rotate(10deg) brightness(100%);
+    border-radius: 50%;
+    box-sizing: border-box;
+    /*background-color: #fff;*/
+}
+
+
+.single-button:hover {
+    transform: scale(1.0);
+}
+
+.orange-button{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
+    background: #F4AF54;
+    border-radius: 20px;
+    height: 35px;
+    border: none;
+    margin-bottom: 0.7rem;
+}
+
+.black-button{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    height: 35px;
+    margin-bottom: 0.7rem;
+}
+
+.red-button{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
+    background: #ffb3b;
+    border: 1px solid #ef6464;
+    border-radius: 20px;
+    height: 35px;
+    margin-bottom: 0.7rem;
+}
+
+.green-button{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
+    background: #ffb3b;
+    border: 1px solid #49f356;
+    border-radius: 20px;
+    height: 35px;
+    margin-bottom: 0.7rem;
+}
+
+.load-gif {
+  animation: spin 1.5s linear infinite;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.hidden{
+    display: none;
+}
+
+.blurred{
+    filter: blur(3px);
+}
+
+.centralized{
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.horizontal-scroll{
+    width: 100vw;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    top: 13%;
+    transform: translateY(-50%);
+    padding: 5% 5% 0% 5%;
+    box-sizing: border-box;
+}

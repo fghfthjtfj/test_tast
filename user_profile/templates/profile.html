@@ -1,0 +1,12 @@
+{% load static %}
+
+<div class="profile-page-div">
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Выйти</button>
+    </form>
+    <div class="form-div">
+        <p class="ad-title-label">Имя пользователя</p>
+        <p>{{ user_profile.username }}</p>
+    </div>
+</div>

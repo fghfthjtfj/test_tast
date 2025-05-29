@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../fonts/BebasNeue Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../fonts/BebasNeue Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../fonts/BebasNeue Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../fonts/BebasNeue BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.bebas-text{
+    font-family: 'BebasNeue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    color: #fff;
+    flex: none;
+    flex-grow: 0;
+}
+.bebas-text.medium{
+    font-size: 32px;
+
+}
+.bebas-text.large{
+    font-size: 38px;
+}
+
+.roboto-text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    color: #FFFFFF;
+    flex: none;
+    flex-grow: 0;
+
+}
+.roboto-text.small{
+    font-size: 14px;
+}
+.roboto-text.medium{
+    font-size: 16px;
+}
+.roboto-text.large{
+    font-size: 18px;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.white-text{
+    color: #FFFFFF;
+}
+
+.grey-text{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.orange-text{
+    color: #F4AF54;
+}
+.black-text{
+    color: #000;
+}
+.left{
+    text-align: left;
+}

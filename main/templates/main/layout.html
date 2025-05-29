@@ -1,0 +1,48 @@
+{% load static %}
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,  user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'main/css/text.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'ads/css/ads.css' %}">
+    <link rel="stylesheet" href="{% static 'user_profile/css/user_profile.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'user_profile/css/user_profile.css' %}">
+
+</head>
+<body>
+    <div class="fullscreen-container">
+            <div id="content" data-csrf-token="{{ csrf_token }}">
+            </div>
+
+            <div class="control-panel">
+                <ul class="nav-icons">
+                    {% for i in button_indices %}
+                        <li class="nav-item">
+                            <span id="custom-button{{ i }}" class="single-button" onclick="loadContent({{ i }})">
+                                <img src="{% static 'main/img/navigate_buttons/b_' %}{{ i }}.svg" alt="Кнопка {{ i }}">
+                            </span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        <div id="loading-screen" style="position: fixed; display: flex; top: 0; left: 0; width: 100%; height: 100%;
+        background-color: #d5d5d5; z-index: 9999; align-items: center; justify-content: center;">
+            <img src="{% static 'main/img/load.png' %}" class="load-gif" style="width: 200px; height: 200px;">
+        </div>
+    </div>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+    <script src="{% static 'main/js/home.js' %}"></script>
+    <script src="{% static 'ads/js/ads.js' %}"></script>
+    <script src="{% static 'user_profile/js/user_profile.js' %}"></script>
+
+</html>

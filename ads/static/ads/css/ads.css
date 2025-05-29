@@ -1,0 +1,226 @@
+.question-form-div{
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(168.17deg, #1B1B1B 2.1%, #242424 96.76%);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25), inset 0px 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow-y: auto;
+    height: 90%;
+    padding: 6%;
+    width: 90%;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    left: 50%;
+    overflow-x: hidden;
+
+}
+
+.form-check{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+
+.form-label label{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.form-label input{
+  background-color: orange;
+
+}
+
+.form-label input[type="checkbox"],
+.form-label input[type="radio"]  {
+    margin: 0;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 8px;
+    position: relative;
+    background: none;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #F4AF54;
+    background: none;
+}
+
+/* Оранжевый фон при выборе */
+.form-label input[type="checkbox"]:checked,
+.form-label input[type="radio"]:checked{
+    background: #F4AF54;
+}
+
+/* Галочка поверх чекбокса */
+.form-label input[type="checkbox"]:checked::after,
+.form-label input[type="radio"]:checked::after{
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.form-section{
+    margin-bottom: 1rem;
+}
+.form-input{
+    /*background: linear-gradient(168.17deg, #181818 2.1%, #111111 96.76%);*/
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 90%;
+    height: 26px;
+    padding-left: 8px;
+}
+
+.form-subfield{
+    align-items: center;
+}
+
+.label-title{
+    margin-bottom: 0.5rem;
+}
+
+.form-section.slim{
+
+}
+
+.form-input.large{
+  height: 80px;
+}
+
+.ads-page-div{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-div{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #e5e5e5;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5%;
+    width: 90%;
+}
+
+.cross-img{
+    position: absolute;
+    right: 5%;
+}
+
+.ads-view-div{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ads-list{
+    width: 100%;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+}
+
+.ad-title{
+    background-color: #afafaf;
+    padding: 2%;
+}
+
+.ad-desc{
+    background-color: #afafaf;
+    padding: 2%;
+}
+
+.ad-element{
+    background-color: #bdbdbd;
+    border-radius: 10px;
+    padding: 5%;
+    margin-bottom: 1rem;
+}
+
+.ad-img{
+  height: 200px;
+}
+
+.filter-form {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    display: flex ;
+    flex-direction: column;
+}
+
+#category-select {
+    padding: 6px 12px;
+    font-size: 1rem;
+}
+
+.buttons-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.proposal-view-div{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.active-border {
+    border-color: #000;
+    border-radius: 7px;
+    border: 1.5px solid;
+}
+
+.select-with-border{
+    padding: 8px;
+}
+
+.active-list-switch{
+    display: flex;
+    width: 80vw;
+    justify-content: space-around;
+}
+
+.filters-view-div{
+  position: absolute;
+    width: 80%;
+    background-color: #fff;
+    padding: 5%;
+    top: 1%;
+    z-index: 2;
+    border-radius: 5px;
+
+}
+
+.category-filter-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 86%;
+}
+
+.ad-title-label{
+    margin-top: 1rem;
+    margin-bottom: 0;
+}

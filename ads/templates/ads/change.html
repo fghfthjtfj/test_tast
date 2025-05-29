@@ -1,0 +1,35 @@
+{% load static %}
+
+<form method="post" id="proposal-form"
+      action="{% if form.instance.pk %}
+                 {% url 'ads:proposal_edit' form.instance.pk %}
+              {% else %}
+                 {% url 'ads:proposal_create' %}?receiver={{ form.initial.ad_receiver.id }}
+              {% endif %}">
+
+    {% csrf_token %}
+    <img class="cross-img" id="cross-img" style="top: 5%;" src="{% static 'ads/img/cross.svg' %}">
+
+    <label for="{{ form.ad_sender.id_for_label }}" class="roboto-text black-text medium label-title">
+        Ваше объявление
+    </label>
+    <div class="form-section">
+        {{ form.ad_sender }}
+    </div>
+
+    <label for="{{ form.ad_receiver.id_for_label }}" class="roboto-text black-text medium label-title">
+        Объявление собеседника
+    </label>
+    <div class="form-section">
+        {{ form.ad_receiver }}
+    </div>
+
+    <label for="{{ form.comment.id_for_label }}" class="roboto-text black-text medium label-title">
+        Комментарий
+    </label>
+    <div class="form-section large">
+        {{ form.comment }}
+    </div>
+    <button type="submit" class="send-exchange-button orange-button">Отправить</button>
+
+</form>

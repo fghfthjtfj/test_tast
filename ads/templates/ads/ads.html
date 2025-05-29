@@ -1,0 +1,105 @@
+{% load static %}
+
+<div class="ads-page-div" id="ads-page-div">
+    <div class="active-list-switch">
+        <p class="select-with-border active-border" data-show-block="ads-view-div">Объявления</p>
+        <p class="select-with-border" data-show-block="proposal-view-div">Заявки</p>
+        <p class="select-with-border" data-show-block="proposal-income-view-div">Входящие заявки</p>
+    </div>
+    <div class="filters-view-div hidden" id="filters-view-div">
+        <div class="filter-form">
+            <img class="cross-img" id="filter-cross-img" style="top: 5%; filter: invert(100%);" src="{% static 'ads/img/cross.svg' %}">
+            <input class="roboto-text medium black-text" style="width: 86%;" placeholder="Поиск">
+            <div class="category-filter-div">
+                <label for="category-select" class="roboto-text large black-text">Категория:</label>
+                <select id="category-select">
+                    <option value="all">Все категории</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat.id }}">{{ cat.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class="orange-button" id="set-filters-button">Применить</button>
+        </div>
+    </div>
+
+    <div class="ads-view-div" id="ads-view-div" style="width: 100vw" data-toggle-block="ads-view-div">
+        <button class="black-button large" id="filter-button" style="width: 80%;">Фильтры</button>
+
+        <div class="ads-list">
+            {% for ad in ads %}
+                <div class="ad-element" data-category="{{ ad.category.id }}">
+                    <p class="ad-title">{{ ad.title }}</p>
+                    <img class="ad-img" src="{{ ad.image_url.url }}">
+                    <p class="ad-desc">{{ ad.description }}</p>
+                    <p class="ad-title ad-condition">{{ ad.condition }}</p>
+
+                    {% if ad.user == request.user %}
+                        <button class="black-button edit-button" data-ad-id="{{ ad.id }}">Редактировать</button>
+                    {% else %}
+                        <button class="orange-button change-button" data-ad-id="{{ ad.id }}">Обменяться</button>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <button class="orange-button" id="create-ad" style="width: 80%;">Создать объявление</button>
+    </div>
+
+    <div class="proposal-view-div hidden" style="width: 100vw" data-toggle-block="proposal-view-div">
+        <div class="ads-list">
+            {% for proposal in proposals %}
+                <div class="ad-element" data-category="{{ ad.category.id }}">
+                    <p class="ad-title-label roboto-text black-text large">Статус</p>
+                    <p class="ad-title">{{ proposal.get_status_display }}</p>
+
+                    <p class="ad-title-label roboto-text black-text large">Предложение</p>
+                    <p class="ad-title">{{ proposal.ad_sender.title }}</p>
+
+                    <p class="ad-title-label roboto-text black-text large">Запрос</p>
+                    <p class="ad-title">{{ proposal.ad_receiver.title }}</p>
+
+                    <img class="ad-img" src="{{ proposal.ad_receiver.image_url.url }}">
+
+                    <p class="ad-title-label roboto-text black-text large">Комментарий</p>
+                    <p class="ad-desc">{{ proposal.comment }}</p>
+
+                    {% if proposal.status == wait %}
+                        <button class="red-button proposal-cancel-button" data-ad-id="{{ proposal.id }}" style="margin-top: 1rem;">Отменить</button>
+                    {% endif %}
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="proposal-income-view-div hidden" style="width: 100vw" data-toggle-block="proposal-income-view-div">
+        <div class="ads-list">
+            {% for proposal in proposals_income %}
+                <div class="ad-element" data-category="{{ ad.category.id }}">
+                    <p class="ad-title-label roboto-text black-text large">Статус</p>
+                    <p class="ad-title">{{ proposal.get_status_display }}</p>
+
+                    <p class="ad-title-label roboto-text black-text large">Предложение</p>
+                    <p class="ad-title">{{ proposal.ad_sender.title }}</p>
+
+                    <p class="ad-title-label roboto-text black-text large">Запрос</p>
+                    <p class="ad-title">{{ proposal.ad_receiver.title }}</p>
+
+                    <img class="ad-img" src="{{ proposal.ad_receiver.image_url.url }}">
+
+                    <p class="ad-title-label roboto-text black-text large">Комментарий</p>
+                    <p class="ad-desc">{{ proposal.comment }}</p>
+
+                    {% if proposal.status == wait %}
+                        <div class="buttons-div">
+                            <button class="red-button proposal-income-cancel-button" data-ad-id="{{ proposal.id }}" style="margin-top: 1rem;">Отменить</button>
+                            <button class="green-button proposal-accept-button" data-ad-id="{{ proposal.id }}" style="margin-top: 1rem;">Принять</button>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="form-div hidden" id="form-div">
+</div>

@@ -1,0 +1,26 @@
+{% load static %}
+<html lang="ru">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,  user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'main/css/auth.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/text.css' %}">
+
+</head>
+<body>
+    <div class="login-page-div">
+        <div class="login-div">
+            <p class="bebas-text large black-text">Login</p>
+
+            <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
